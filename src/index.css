@@ -4,7 +4,10 @@
 
 @layer base {
   :root {
-    --color-purple: 122 106 225;
-    --color-primary: var(--color-purple);
+    --primary: 12 4 27;
+    --secondary: 254 235 214;
+    --primary-button: 238 99 102;
+    --background: 255 246 244;
+    --accent: 228 47 1;
   }
 }

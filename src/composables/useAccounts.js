@@ -12,9 +12,9 @@ export default function () {
 
   const getAccounts = async () => {
     loading.value = true
-    const fetch_response = await fetch(URL + `/me/accounts?fields=instagram_business_account{id,media_count,profile_picture_url,name},picture,name&access_token=${store.token}`)
+    const fetch_response = await fetch(URL + `/me/accounts?fields=instagram_business_account{id,media_count,profile_picture_url,name,username},picture,name&access_token=${store.token}`)
     const res = await fetch_response.json()
-    list.value = res.data
+    list.value = res.data.filter(fansPage => fansPage.instagram_business_account)
     loading.value = false
   }
 

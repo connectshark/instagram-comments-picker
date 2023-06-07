@@ -7,7 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(var(--color-primary) / <alpha-value>)'
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        secondary: 'rgb(var(--secondary) / <alpha-value>)',
+        'primary-button': 'rgb(var(--primary-button) / <alpha-value>)',
+        'background': 'rgb(var(--background) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+      },
+      minHeight: {
+        hh: '100svh'
       }
     },
     fontFamily: {
