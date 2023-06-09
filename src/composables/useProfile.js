@@ -1,4 +1,4 @@
-import { onMounted, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useUserStore } from '../stores/user'
 const INSTAGRAM_API_DOMAIN = import.meta.env.VITE_INSTAGRAM_API_DOMAIN
 const INSTAGRAM_API_VERSION = import.meta.env.VITE_INSTAGRAM_API_VERSION
@@ -41,7 +41,7 @@ export default function () {
     loading.value = false
   }
 
-  onMounted(getIG)
+  onBeforeMount(getIG)
 
   return {
     medias,

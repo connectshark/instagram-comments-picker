@@ -2,7 +2,7 @@
 </script>
 
 <template>
-<div class="text-center py-20">
+<div class="text-center">
   <h1 class="text-5xl/loose font-bold py-10">IG<span class=" bg-clip-text text-transparent bg-gradient-to-r from-primary-button to-accent">Picker</span></h1>
   <p class="text-2xl/loose mb-10">最友善的instagram留言抽獎站</p>
   <p>

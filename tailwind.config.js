@@ -14,7 +14,7 @@ module.exports = {
         accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       minHeight: {
-        hh: '100svh'
+        hh: 'calc(100svh - 80px - 157px)'
       }
     },
     fontFamily: {

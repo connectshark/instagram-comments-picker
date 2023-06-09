@@ -6,8 +6,11 @@
     </router-link>
     <nav>
       <ul>
-        <li v-for="item in navs">
-          <router-link :to="item.link">{{ item.name }}</router-link>
+        <li>
+          <router-link v-if="!store.token" to="/login">授權</router-link>
+        </li>
+        <li>
+          <router-link to="/me">貼文</router-link>
         </li>
       </ul>
     </nav>
@@ -16,6 +19,9 @@
 </template>
 
 <script setup>
+import { useUserStore } from '../stores/user'
+
+const store = useUserStore()
 const navs = [
   {
     name: '授權',

@@ -1,4 +1,4 @@
-import { onMounted, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useUserStore } from '../stores/user'
 const INSTAGRAM_API_DOMAIN = import.meta.env.VITE_INSTAGRAM_API_DOMAIN
 const INSTAGRAM_API_VERSION = import.meta.env.VITE_INSTAGRAM_API_VERSION
@@ -10,13 +10,13 @@ export default function ({ postId }) {
   const post = ref({})
   const getComments = async () => {
     loading.value = true
-    const fetch_response = await fetch(URL + '/' + postId + `?fields=comments{text,user,timestamp,username,id},caption,comments_count,media_type,media_url,shortcode,thumbnail_url&access_token=${store.token}`)
+    const fetch_response = await fetch(URL + '/' + postId + `?fields=comments.limit(300){text,user,timestamp,username,id,replies{id}},caption,comments_count,media_type,media_url,shortcode,thumbnail_url&access_token=${store.token}`)
     const res = await fetch_response.json()
     post.value = res
     loading.value = false
   }
 
-  onMounted(getComments)
+  onBeforeMount(getComments)
 
   return {
     loading,

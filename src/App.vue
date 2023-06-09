@@ -5,7 +5,7 @@ import FooterWrapper from './components/FooterWrapper.vue'
 
 <template>
 <HeaderWrapper/>
-<main>
+<main class="w-11/12 mx-auto py-10 min-h-hh">
   <router-view />
 </main>
 <FooterWrapper/>
